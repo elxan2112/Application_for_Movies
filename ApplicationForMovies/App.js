@@ -41,17 +41,16 @@ class App extends Component {
       console.log('Did - url is wrong' + e)
     }
   }
-  
-  changeMovieData = async() =>{
+  componentDidUpdate = async() =>{
     try{
       const response = await fetch(`http://api.tvmaze.com/search/shows?q=${this.state.urlLink}`)
       const data = await response.json()
       this.dataJson = data
-      //this.setState({empty: ''})
-      console.log('changeDid  ' + this.dataJson[0].show.name)
+      this.setState({empty: ''})
+      console.log('didmountfdfd  ' + this.dataJson[0].show.name)
     }
     catch (e){
-      console.log('Change - Did - url is wrong' + e)
+      console.log('Did - url is wrong' + e)
     }
   }
 
@@ -59,12 +58,14 @@ class App extends Component {
     return(
       <View style={styles.container}>
         <View style = {styles.header}>
-          <View style = {styles.headerLogo}></View>
+          <View style = {styles.headerLogo}>
+            <Text style = {styles.headerText}>
+              Best Movies!
+            </Text>
+          </View>
           <View style = {styles.headerInput}>
             <TextInput style = {styles.inputText} onChangeText={(text) => this.changeName(text)}></TextInput>
-            <TouchableOpacity style = {styles.inputBtn} onPress={() => this.changeMovieData}>
-              <Text style = {styles.textstyle}>Button</Text>
-              </TouchableOpacity>
+            
           </View>
         </View>
 

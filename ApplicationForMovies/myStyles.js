@@ -4,31 +4,33 @@ import {StyleSheet} from 'react-native'
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
+        backgroundColor: 'black',
     },
     header:{
         flex: 0.25,
-        backgroundColor: 'red',
     },
     headerLogo:{
         flex:0.7,
-        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    headerText: {
+        fontSize: 50,
+        color: 'blue',
+
     },
     headerInput:{
         flex: 0.3,
         flexDirection: 'row',
     },
     inputText:{
-        flex: 0.8
-    },
-    inputBtn:{
-        flex: 0.2,
-        backgroundColor: 'blue',
-        justifyContent: 'center',
-        alignItems: 'center',
+        flex: 1,
+        borderRadius: 20,
+        backgroundColor: 'white'
     },
     results:{
         flex: 0.75,
-        backgroundColor: 'yellow',
+        
     },
     resultsScroll:{
         
@@ -52,7 +54,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
     textstyle:{
-        fontSize: 20,
+        fontSize: 25,
+        marginTop: 20,
+        marginBottom: 40,
         color: 'red',
     }
 });
